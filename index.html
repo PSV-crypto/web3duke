@@ -1,0 +1,271 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сергей Прудников Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    body {
+      background-image: url('assets/images/City.webp');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: #1a1a2e;
+      background-attachment: fixed;
+      color: #E0E0E0;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    .overlay-content, section, footer {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .hero .overlay-content {
+      background-color: transparent;
+    }
+    @media (max-width: 768px) {
+      body {
+        background-attachment: scroll;
+      }
+    }
+    .card {
+      transition: transform 0.3s;
+      background-color: transparent;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .cta-button {
+      background-color: #00bfff;
+      color: #FFFFFF;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.25rem;
+      text-decoration: none;
+    }
+    .cta-button:hover {
+      background-color: #00d1ff;
+    }
+    h2 {
+      text-shadow: 0 0 4px #fff, 0 0 8px #00bfff;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    gsap.registerPlugin();
+    gsap.from(".hero, .services, .case-studies, .crypto-mentorship, .products, .socials, .footer", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  </script>
+
+  <header class="fixed top-0 w-full bg-gray-900 bg-opacity-90 z-50 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div></div>
+      <div class="space-x-2">
+        <span class="text-blue-400 font-bold">RU</span>
+        <span class="text-gray-200 cursor-not-allowed">EN</span>
+        <span class="text-gray-200 cursor-not-allowed">ES</span>
+        <span class="text-gray-200 cursor-not-allowed">PL</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero min-h-screen flex flex-col items-center justify-center p-8">
+    <div class="overlay-content text-center">
+      <img src="assets/images/Hero.webp" alt="Friendly Pose" class="w-full md:w-1/2 mx-auto mb-6 rounded-lg" loading="lazy">
+      <h1 class="text-5xl font-bold" style="text-shadow: 0 0 4px #fff, 0 0 8px #00bfff;">Сергей Прудников</h1>
+      <div class="mt-4"></div>
+      <p class="text-xl leading-1.6 mb-0">Внедряю ИИ и создаю работающий контент, помогаю освоить крипту.</p>
+      <div class="mt-4"></div>
+      <p class="text-xl leading-1.6 mb-0">11 лет в продажах, 3 года в маркетинге, 2 года в копирайтинге. С 2022-го в крипте, с 2024-го — в ИИ. Люблю задачи, где мозг работает на результат.</p>
+      <div class="mt-8"></div>
+      <h2 class="text-4xl font-semibold mb-6">Мой подход</h2>
+      <div class="mt-4"></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        <div class="p-4 rounded card">Результат > Красивые слайды</div>
+        <div class="p-4 rounded card">Честность > Завышенные обещания</div>
+        <div class="p-4 rounded card">Партнёрство > Формальности</div>
+        <div class="p-4 rounded card">Здравый смысл > Следование модным мейнстримам</div>
+        <div class="p-4 rounded card">Вовлечённость с желанием дать больше ожидаемого</div>
+        <div class="p-4 rounded card">Баланс по принципу Парето</div>
+      </div>
+      <div class="space-x-4 mb-4">
+        <a href="https://t.me/Web3Duke" class="cta-button">Написать в Telegram</a>
+        <a href="https://wa.me/+48600956652" class="cta-button">Написать в WhatsApp</a>
+      </div>
+      <p class="text-xl leading-1.6 mt-4">Без лишних обещаний: честность, баланс и чуть больше, чем вы ждете.<br>Готов помочь с ИИ или контентом — пишите!</p>
+    </div>
+  </section>
+
+  <section class="services p-8">
+    <h2 class="text-4xl font-semibold text-center mb-6">Задачи, которые решаем вместе</h2>
+    <div class="flex flex-col md:flex-row items-start justify-between mb-6">
+      <div class="w-full md:w-1/2 p-4 space-y-12">
+        <p class="text-xl leading-1.6">Контент под ключ: Планы, тексты и визуалы для любых площадок. ИИ переймет ваш стиль повествования — докажу за день.</p>
+        <p class="text-xl leading-1.6">Маркетинговая стратегия: Аудит и план с оптимальным балансом усилий и результата.</p>
+        <p class="text-xl leading-1.6">Автоматизация и рутинный ад: Заменяю рутину скриптами и ИИ. Экономим время — без магии.</p>
+        <p class="text-xl leading-1.6">Визуал на заказ: Лендинги, презентации, баннеры, фотосессии, видео — по вашему запросу.</p>
+      </div>
+      <div class="w-full md:w-1/2 p-4">
+        <img src="assets/images/Service.webp" alt="AI for Business" class="w-full rounded-lg" loading="lazy">
+      </div>
+    </div>
+    <div class="text-center space-x-4 mb-4">
+      <a href="https://t.me/Web3Duke" class="cta-button">Написать в Telegram</a>
+      <a href="https://wa.me/+48600956652" class="cta-button">Написать в WhatsApp</a>
+    </div>
+    <p class="text-xl leading-1.6 mt-4 text-center">Нужен контент, визуал, автоматизация, обращайтесь, помогу реализовать!<br>Что то другое? Пишите, вникну и найдем решение!</p>
+  </section>
+
+  <section class="case-studies p-8">
+    <h2 class="text-4xl font-semibold text-center mb-6">Реальные кейсы</h2>
+    <div class="flex flex-col md:flex-row items-start justify-between mb-6">
+      <div class="w-full md:w-1/2 p-4">
+        <img src="assets/images/Copywriter.webp" alt="Landing and Visual" class="w-full rounded-lg" loading="lazy">
+      </div>
+      <div class="w-full md:w-1/2 p-4 space-y-12">
+        <p class="text-xl leading-1.6">Копирайтинг: Создаю контент для X и других соцсетей. Больше 50 проектов, в основном под NDA. Примеры: пост 1, пост 2, пост 3.</p>
+        <p class="text-xl leading-1.6">Лендинги и визуал: Этот лендинг — живой кейс моей работы. Изображения на нем — так же примеры для лендингов и презентаций.</p>
+        <p class="text-xl leading-1.6">Создание GPTs (ИИ-ассистент под вашу задачу) по запросу.</p>
+      </div>
+    </div>
+    <div class="text-center space-x-4 mb-4">
+      <a href="https://t.me/Web3Duke" class="cta-button">Написать в Telegram</a>
+      <a href="https://wa.me/+48600956652" class="cta-button">Написать в WhatsApp</a>
+    </div>
+    <p class="text-xl leading-1.6 mt-4 text-center">Пишите и обсудим вашу задачу, кейсы обновляются не часто...</p>
+  </section>
+
+  <section class="crypto-mentorship p-8">
+    <h2 class="text-4xl font-semibold text-center mb-6">Наставничество в крипте</h2>
+    <div class="flex flex-col md:flex-row items-start justify-between mb-6">
+      <div class="w-full md:w-1/2 p-4 space-y-12">
+        <p class="text-xl leading-1.6">С 2022 года в крипте, бесценный опыт взлетов и падений.</p>
+        <p class="text-xl leading-1.6">Проведу за руку от создания кошелька и аккаунта на бирже до формирования инвестиционного портфеля.</p>
+        <p class="text-xl leading-1.6">Дам рабочие инструменты и проверенные источники информации.</p>
+        <p class="text-xl leading-1.6">Покажу риски 'прибыльных' схем и уберегу от ошибок и основных схем скама.</p>
+      </div>
+      <div class="w-full md:w-1/2 p-4">
+        <img src="assets/images/Crypto.webp" alt="Crypto Mentoring" class="w-full rounded-lg" loading="lazy">
+      </div>
+    </div>
+    <div class="text-center space-x-4 mb-4">
+      <a href="https://t.me/Web3Duke" class="cta-button">Написать в Telegram</a>
+      <a href="https://wa.me/+48600956652" class="cta-button">Написать в WhatsApp</a>
+    </div>
+    <p class="text-xl leading-1.6 mt-4 text-center">Хотите разобраться в крипте? Обращайтесь, проведу через все этапы.</p>
+  </section>
+
+  <section class="products p-8">
+    <h2 class="text-4xl font-semibold text-center mb-6">Мои продукты для вас</h2>
+    <p class="text-xl leading-1.6 text-center mb-4">Простые инструменты для жизни</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div class="p-4 rounded card flex items-center">
+        <img src="assets/images/ai-book-analyst.webp" alt="AI Book Analyst" class="w-16 h-16 rounded-full mr-4" loading="lazy">
+        <div>
+          <h3 class="text-2xl font-semibold">ИИ-аналитик книг</h3>
+          <p class="text-xl leading-1.6">Анализирует книги и дает резюме за 5 минут. Тест на 'Подсознание может все' Дж. Кехо — доказано, работает!</p>
+          <a href="#" class="text-blue-400 mt-2 inline-block">Попробовать</a>
+        </div>
+      </div>
+      <div class="p-4 rounded card flex items-center justify-center">
+        <p class="text-xl">Будет обновляться</p>
+      </div>
+    </div>
+    <div class="text-center space-x-4 mb-4">
+      <a href="https://t.me/Web3Duke" class="cta-button">Написать в Telegram</a>
+      <a href="https://wa.me/+48600956652" class="cta-button">Написать в WhatsApp</a>
+    </div>
+    <p class="text-xl leading-1.6 mt-4 text-center">Понравился ИИ-аналитик? Хотите ИИ-ассистента под свою задачу?<br>Обращайтесь — создам GPTs под вашу задачу и научу использовать!</p>
+  </section>
+
+  <section class="socials p-8 text-center">
+    <h2 class="text-4xl font-semibold mb-6">Мои соцсети и каналы</h2>
+    <div class="space-x-6 md:space-x-4 flex flex-wrap justify-center">
+      <a href="https://x.com/Web3Duke1" class="text-blue-400">X: @Web3Duke1</a>
+      <a href="#" class="text-blue-400">LinkedIn</a>
+      <a href="#" class="text-blue-400">Instagram</a>
+      <a href="#" class="text-blue-400">Facebook</a>
+      <a href="#" class="text-blue-400">Threads</a>
+      <a href="https://t.me/Crypto_AI_Diary" class="text-blue-400">TG Channel</a>
+    </div>
+    <p class="text-xl leading-1.6 mt-4">Подписывайтесь и следите за полезной информацией от меня в соцсетях!</p>
+  </section>
+
+  <footer class="footer p-8 text-center">
+    <h2 class="text-4xl font-semibold mb-6" style="text-shadow: 0 0 4px #fff, 0 0 8px #00bfff;">Связаться со мной</h2>
+    <div class="space-x-6">
+      <a href="https://t.me/Web3Duke" class="text-blue-400 text-xl">Telegram</a>
+      <a href="https://api.whatsapp.com/send?phone=48600956652" class="text-blue-400 text-xl">WhatsApp</a>
+      <a href="mailto:3069814@gmail.com" class="text-blue-400 text-xl">E-mail</a>
+    </div>
+    <div class="mt-4 space-x-2">
+      <a href="privacy.html" class="text-gray-200 text-xl">Политика конфиденциальности</a> |
+      <a href="terms.html" class="text-gray-200 text-xl">Пользовательское соглашение</a>
+    </div>
+  </footer>
+</body>
+</html>

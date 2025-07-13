@@ -1,0 +1,11 @@
+title: Сергей Прудников
+description: Внедряю ИИ и создаю работающий контент
+url: ""
+baseurl: ""
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+collections:
+  products:
+    output: true
