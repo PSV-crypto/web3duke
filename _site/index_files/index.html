@@ -1,0 +1,234 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сергей Прудников Landing</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #4B0082, #1E90FF, #00D4FF, #FF69B4);
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+    }
+    /* Анимация башен кода и крипто-символов */
+    .matrix-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .code-tower {
+      position: absolute;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: #00FF41;
+      animation: fall 10s linear infinite;
+    }
+    .crypto-symbol {
+      position: absolute;
+      font-size: 24px;
+      color: #FFD700;
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes fall {
+      0% { top: -20%; opacity: 1; }
+      100% { top: 100%; opacity: 0.2; }
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+    /* Генерация башен и символов через JavaScript */
+    <script>
+      function createMatrixEffect() {
+        const background = document.querySelector('.matrix-background');
+        for (let i = 0; i < 20; i++) {
+          const tower = document.createElement('div');
+          tower.className = 'code-tower';
+          tower.style.left = Math.random() * 100 + 'vw';
+          tower.style.animationDuration = Math.random() * 5 + 5 + 's';
+          tower.style.animationDelay = Math.random() * 5 + 's';
+          tower.textContent = Array(20).fill().map(() => String.fromCharCode(65 + Math.random() * 26)).join('');
+          background.appendChild(tower);
+        }
+        for (let i = 0; i < 5; i++) {
+          const symbol = document.createElement('div');
+          symbol.className = 'crypto-symbol';
+          symbol.style.left = Math.random() * 100 + 'vw';
+          symbol.style.top = Math.random() * 100 + 'vh';
+          symbol.textContent = ['₿', 'Ξ'][Math.floor(Math.random() * 2)];
+          background.appendChild(symbol);
+        }
+      }
+      window.onload = createMatrixEffect;
+    </script>
+  </style>
+</head>
+<body>
+  <div class="matrix-background"></div>
+
+  <!-- Hero -->
+  <section class="hero p-8 text-center relative z-10">
+    <h1 class="text-4xl font-bold">Сергей Прудников</h1>
+    <p class="mt-4">Внедряю ИИ и создаю работающий контент</p>
+    <img src="/assets/images/hero.webp" alt="Hero Section" class="mx-auto mt-4 rounded-lg" loading="lazy">
+    <div class="mt-6">
+      <a href="https://t.me/Web3Duke" class="bg-green-500 text-white px-4 py-2 rounded mr-2">Написать в Telegram</a>
+      <a href="https://wa.me/48600956652" class="bg-green-500 text-white px-4 py-2 rounded">Написать в WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Мой подход -->
+  <section class="p-8 text-center relative z-10">
+    <h2 class="text-3xl font-bold">Мой подход</h2>
+    <ul class="mt-4 space-y-2">
+      <li>Результат > Красивые слайды</li>
+      <li>Честность > Модные термины</li>
+      <li>Партнёрство > Формальности</li>
+      <li>Здравый смысл > Следование модным мейнстримам</li>
+      <li>Вовлечённость с фокусом на деле, без болтологии</li>
+    </ul>
+  </section>
+
+  <!-- Задачи -->
+  <section class="p-8 relative z-10">
+    <h2 class="text-3xl font-bold text-center">Задачи, которые решаем вместе</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      <div class="p-4 bg-gray-800 rounded">
+        <img src="/assets/images/services-marketing.webp" alt="Marketing Strategy" class="mx-auto rounded-lg" loading="lazy">
+        <h3 class="text-xl font-bold mt-2">Маркетинговая стратегия</h3>
+        <p>Аудит и план с оптимальным балансом усилий и результата.</p>
+      </div>
+      <div class="p-4 bg-gray-800 rounded">
+        <img src="/assets/images/services-ai.webp" alt="AI for Business" class="mx-auto rounded-lg" loading="lazy">
+        <h3 class="text-xl font-bold mt-2">ИИ для бизнеса</h3>
+        <p>Внедряю нейросети без боли и курсов. Просто результат.</p>
+      </div>
+      <div class="p-4 bg-gray-800 rounded">
+        <img src="/assets/images/services-automation.webp" alt="Automation" class="mx-auto rounded-lg" loading="lazy">
+        <h3 class="text-xl font-bold mt-2">Автоматизация и рутинный ад</h3>
+        <p>Заменяю рутину скриптами и ИИ. Экономим время — без магии.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Кейсы -->
+  <section class="p-8 relative z-10">
+    <h2 class="text-3xl font-bold text-center">Реальные кейсы</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+      <div class="p-4 bg-gray-800 rounded">
+        <img src="/assets/images/case-studies.webp" alt="Case Studies" class="mx-auto rounded-lg" loading="lazy">
+        <h3 class="text-xl font-bold mt-2">Копирайтинг</h3>
+        <p>Создаю контент для X и соцсетей. Больше 50 проектов, часть под NDA.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Продукты -->
+  <section class="p-8 relative z-10">
+    <h2 class="text-3xl font-bold text-center">Мои продукты: реальная польза уже сейчас</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      <div class="p-4 bg-gray-800 rounded">
+        <img src="/assets/images/products.webp" alt="AI Book Analyst" class="mx-auto rounded-lg" loading="lazy">
+        <h3 class="text-xl font-bold mt-2">ИИ-аналитик книг</h3>
+        <p>Анализирует книги и дает резюме за 5 минут.</p>
+        <a href="#" class="text-blue-400 mt-2 inline-block">Попробовать</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Обо мне -->
+  <section class="p-8 text-center relative z-10">
+    <h2 class="text-3xl font-bold">Обо мне</h2>
+    <img src="/assets/images/about-me.webp" alt="About Me" class="mx-auto mt-4 rounded-lg" loading="lazy">
+    <p class="mt-4">Не гуру и не инфоцыган — просто партнёр, который слушает и делает.</p>
+    <div class="mt-6">
+      <a href="https://t.me/Web3Duke" class="bg-green-500 text-white px-4 py-2 rounded mr-2">Написать в Telegram</a>
+      <a href="https://wa.me/48600956652" class="bg-green-500 text-white px-4 py-2 rounded">Написать в WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="p-8 text-center relative z-10">
+    <h2 class="text-3xl font-bold">Давайте работать?</h2>
+    <p class="mt-4">Хотите ИИ или контент? Пишите — разберусь и помогу.</p>
+    <div class="mt-6">
+      <a href="https://t.me/Web3Duke" class="bg-green-500 text-white px-4 py-2 rounded mr-2">Написать в Telegram</a>
+      <a href="https://wa.me/48600956652" class="bg-green-500 text-white px-4 py-2 rounded">Написать в WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Соцсети -->
+  <section class="p-8 text-center relative z-10">
+    <h2 class="text-3xl font-bold">Мои соцсети и каналы</h2>
+    <div class="mt-4 space-x-4">
+      <a href="https://x.com/Web3Duke1" class="text-blue-400">X: @Web3Duke1</a>
+      <a href="#" class="text-blue-400">LinkedIn</a>
+      <a href="#" class="text-blue-400">Instagram</a>
+      <a href="#" class="text-blue-400">Facebook</a>
+      <a href="#" class="text-blue-400">Threads</a>
+      <a href="https://t.me/Crypto_AI_Diary" class="text-blue-400">Telegram Channel: @Crypto_AI_Diary</a>
+    </div>
+  </section>
+
+  <!-- Связаться -->
+  <section class="p-8 text-center relative z-10">
+    <h2 class="text-3xl font-bold">Связаться со мной:</h2>
+    <div class="mt-4 space-y-2">
+      <p>Telegram: @Web3Duke</p>
+      <p>WhatsApp: +48 600 956 652</p>
+      <p>Email: 3069814@gmail.com</p>
+    </div>
+    <div class="mt-4">
+      <a href="#" class="text-blue-400">Политика конфиденциальности</a> |
+      <a href="#" class="text-blue-400">Пользовательское соглашение</a>
+    </div>
+  </section>
+</body>
+</html>
