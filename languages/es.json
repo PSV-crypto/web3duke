@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "title": "Sergey Prudnikov",
+    "description": "Implemento IA y creo contenido efectivo, ayudando a dominar criptomonedas.",
+    "subtext": "11 años en ventas, 3 años en marketing, 2 años en redacción. En cripto desde 2022, en IA desde 2024. Amo los retos que desafían la mente.",
+    "approach_title": "Mi enfoque",
+    "approach_list": ["Resultados > Diapositivas bonitas", "Honestidad > Promesas exageradas", "Asociación > Formalidades", "Sentido común > Seguir tendencias", "Compromiso con deseo de superar expectativas", "Equilibrio por principio de Pareto"],
+    "cta": "Escribe en Telegram",
+    "text": "Sin promesas vacías: honestidad, equilibrio y un poco más de lo que esperas. Listo para ayudar con IA o contenido — ¡escribe!"
+  },
+  "tasks": {
+    "title": "Tareas que resolvemos juntos",
+    "list": ["Contenido llave en mano: Planes, textos y visuales para cualquier plataforma. IA adoptará tu estilo narrativo — lo probaré en un día.", "Estrategia de marketing: Auditoría y plan con un balance óptimo de esfuerzo y resultado.", "Automatización y gestión de rutina: Reemplazo la rutina con scripts e IA. Ahorramos tiempo — sin magia.", "Visuales a pedido: Landings, presentaciones, banners, sesiones de fotos, videos — según tu solicitud."],
+    "cta": "Escribe en Telegram",
+    "text": "¿Necesitas contenido, visuales o automatización? Contáctame, te ayudaré a implementarlo! ¿Algo más? Escribe, me sumergiré y encontraremos una solución!"
+  }
+}

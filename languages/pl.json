@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "title": "Sergey Prudnikov",
+    "description": "Wdrożam AI i tworzę skuteczne treści, pomagam opanować kryptowaluty.",
+    "subtext": "11 lat w sprzedaży, 3 lata w marketingu, 2 lata w copywritingu. W kryptowalutach od 2022, w AI od 2024. Kocham zadania, które angażują umysł.",
+    "approach_title": "Moje podejście",
+    "approach_list": ["Wyniki > Piękne slajdy", "Szczerość > Przesadne obietnice", "Partnerstwo > Formalności", "Zdrowy rozsądek > Ślepe podążanie za trendami", "Zaangażowanie z chęcią przekroczenia oczekiwań", "Balans według zasady Pareta"],
+    "cta": "Napisz na Telegram",
+    "text": "Bez pustych obietnic: szczerość, balans i trochę więcej, niż oczekujesz. Gotów pomóc z AI lub treściami — pisz!"
+  },
+  "tasks": {
+    "title": "Zadania, które rozwiązujemy razem",
+    "list": ["Treści pod klucz: Plany, teksty i wizualizacje na dowolną platformę. AI przejmie Twój styl narracji — udowodnię to w jeden dzień.", "Strategia marketingowa: Audyt i plan z optymalnym bilansem wysiłku i rezultatu.", "Automatyzacja i zarządzanie rutyną: Zastępuję rutynę skryptami i AI. Oszczędzamy czas — bez magii.", "Wizualizacje na zamówienie: Landingi, prezentacje, banery, sesje zdjęciowe, filmy — na Twoje życzenie."],
+    "cta": "Napisz na Telegram",
+    "text": "Potrzebujesz treści, wizualizacji czy automatyzacji? Skontaktuj się, pomogę to zrealizować! Coś innego? Pisz, zagłębię się i znajdziemy rozwiązanie!"
+  }
+}

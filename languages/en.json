@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "title": "Sergey Prudnikov",
+    "description": "I implement AI and create effective content, helping you master crypto.",
+    "subtext": "11 years in sales, 3 years in marketing, 2 years in copywriting. In crypto since 2022, in AI since 2024. I love tasks that challenge the mind.",
+    "approach_title": "My Approach",
+    "approach_list": ["Results > Pretty Slides", "Honesty > Overpromises", "Partnership > Formalities", "Common Sense > Following Trends", "Engagement with a Desire to Exceed Expectations", "Balance by Pareto Principle"],
+    "cta": "Write on Telegram",
+    "text": "No empty promises: honesty, balance, and a bit more than you expect. Ready to help with AI or content — write me!"
+  },
+  "tasks": {
+    "title": "Tasks We Solve Together",
+    "list": ["Turnkey Content: Plans, texts, and visuals for any platform. AI will adopt your storytelling style — I’ll prove it in a day.", "Marketing Strategy: Audit and plan with an optimal effort-to-result balance.", "Automation and Routine Management: Replace routine with scripts and AI. Save time — no magic.", "Custom Visuals: Landings, presentations, banners, photoshoots, videos — on your request."],
+    "cta": "Write on Telegram",
+    "text": "Need content, visuals, or automation? Contact me, I’ll help implement it! Something else? Write, I’ll dive in and find a solution!"
+  }
+}
