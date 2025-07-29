@@ -42,59 +42,357 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лендинг-визитка</title>
+  <title>Лендинг-визитка Сергея Прудникова</title>
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
   <div class="language-switcher">
-    <button onclick="loadLanguage('ru')">Русский</button>
-    <button onclick="loadLanguage('en')">English</button>
-    <button onclick="loadLanguage('pl')">Polski</button>
-    <button onclick="loadLanguage('es')">Español</button>
+    <button onclick="loadLanguage('ru')">RU</button>
+    <button onclick="loadLanguage('en')">EN</button>
+    <button onclick="loadLanguage('es')">ES</button>
+    <button onclick="loadLanguage('pl')">PL</button>
   </div>
 
   <section class="hero">
-    <h1 id="hero-title"></h1>
-    <p id="hero-description"></p>
-    <p id="hero-subtext"></p>
-    <h2 id="approach-title"></h2>
-    <ul id="approach-list"></ul>
-    <button id="hero-cta" class="cta"></button>
+    <h1 id="hero-title">Сергей Прудников</h1>
+    <p id="hero-description">Внедряю ИИ и создаю работающий контент, помогаю освоить крипту.</p>
+    <p id="hero-subtext">11 лет в продажах, 3 года в маркетинге, 2 года в копирайтинге. С 2022-го в крипте, с 2024-го — в ИИ. Люблю задачи, где мозг работает на результат.</p>
+    <h2 id="approach-title">Мой подход</h2>
+    <ul id="approach-list">
+      <li>Результат > Красивые слайды</li>
+      <li>Честность > Завышенные обещания</li>
+      <li>Партнёрство > Формальности</li>
+      <li>Здравый смысл > Следование модным мейнстримам</li>
+      <li>Вовлечённость с желанием дать больше ожидаемого</li>
+      <li>Баланс по принципу Парето</li>
+    </ul>
+    <button id="hero-cta" class="cta">Написать в Telegram</button>
     <button class="cta">Написать в WhatsApp</button>
-    <p id="hero-text"></p>
+    <p id="hero-text">Без лишних обещаний: честность, баланс и чуть больше, чем вы ждете. Готов помочь с ИИ или контентом — пишите!</p>
   </section>
 
   <section class="tasks">
-    <h2 id="tasks-title"></h2>
-    <ul id="tasks-list"></ul>
-    <button id="tasks-cta" class="cta"></button>
+    <h2 id="tasks-title">Задачи, которые решаем вместе</h2>
+    <ul id="tasks-list">
+      <li>Контент под ключ: Планы, тексты и визуалы для любых площадок. ИИ переймет ваш стиль повествования — докажу за день.</li>
+      <li>Маркетинговая стратегия: Аудит и план с оптимальным балансом усилий и результата.</li>
+      <li>Автоматизация и рутинный ад: Заменяю рутину скриптами и ИИ. Экономим время — без магии.</li>
+      <li>Визуал на заказ: Лендинги, презентации, баннеры, фотосессии, видео — по вашему запросу.</li>
+    </ul>
+    <button id="tasks-cta" class="cta">Написать в Telegram</button>
     <button class="cta">Написать в WhatsApp</button>
-    <p id="tasks-text"></p>
+    <p id="tasks-text">Нужен контент, визуал, автоматизация, обращайтесь, помогу реализовать! Что-то другое? Пишите, вникну и найдем решение!</p>
   </section>
 
-  <!-- Другие секции (cases, mentoring, etc.) можно добавить позже -->
+  <section class="case-studies">
+    <h2 id="case-studies-title">Реальные кейсы</h2>
+    <ul id="case-studies-list">
+      <li>Копирайтинг: Создаю контент для X и других соцсетей. Больше 50 проектов, в основном под NDA. Примеры: пост 1, пост 2, пост 3.</li>
+      <li>Лендинги и визуал: Этот лендинг — живой кейс моей работы. Изображения на нем — так же примеры для лендингов и презентаций.</li>
+      <li>Создание GPTs (ИИ-ассистент под вашу задачу) по запросу.</li>
+    </ul>
+    <button id="case-studies-cta" class="cta">Написать в Telegram</button>
+    <button class="cta">Написать в WhatsApp</button>
+    <p id="case-studies-text">Пишите и обсудим вашу задачу, кейсы обновляются не часто...</p>
+  </section>
 
+  <section class="crypto-mentorship">
+    <h2 id="crypto-mentorship-title">Наставничество в крипте</h2>
+    <ul id="crypto-mentorship-list">
+      <li>С 2022 года в крипте, бесценный опыт взлетов и падений.</li>
+      <li>Проведу за руку от создания кошелька и аккаунта на бирже до формирования инвестиционного портфеля.</li>
+      <li>Дам рабочие инструменты и проверенные источники информации.</li>
+      <li>Покажу риски 'прибыльных' схем и уберегу от ошибок и основных схем скама.</li>
+    </ul>
+    <button id="crypto-mentorship-cta" class="cta">Написать в Telegram</button>
+    <button class="cta">Написать в WhatsApp</button>
+    <p id="crypto-mentorship-text">Хотите разобраться в крипте? Обращайтесь, проведу через все этапы.</p>
+  </section>
+
+  <section class="products">
+    <h2 id="products-title">Мои продукты для вас</h2>
+    <p>Простые инструменты для жизни</p>
+    <ul id="products-list">
+      <li>
+        <h3>ИИ-аналитик книг</h3>
+        <p>Анализирует книги и дает резюме за 5 минут. Тест на 'Подсознание может все' Дж. Кехо — доказано, работает!</p>
+        <button class="cta">Попробовать</button>
+      </li>
+    </ul>
+    <p id="products-note">Будет обновляться</p>
+    <button id="products-cta" class="cta">Написать в Telegram</button>
+    <button class="cta">Написать в WhatsApp</button>
+    <p id="products-text">Понравился ИИ-аналитик? Хотите ИИ-ассистента под свою задачу? Обращайтесь — создам GPTs под вашу задачу и научу использовать!</p>
+  </section>
+
+  <section class="socials">
+    <h2 id="socials-title">Мои соцсети и каналы</h2>
+    <ul id="socials-list">
+      <li>X: @Web3Duke1</li>
+      <li>LinkedIn</li>
+      <li>Instagram</li>
+      <li>Facebook</li>
+      <li>Threads</li>
+      <li>TG Channel</li>
+    </ul>
+    <p id="socials-text">Подписывайтесь и следите за полезной информацией от меня в соцсетях!</p>
+  </section>
+
+  <section class="footer">
+    <h2 id="footer-title">Связаться со мной</h2>
+    <ul id="footer-list">
+      <li>Telegram</li>
+      <li>WhatsApp</li>
+      <li>E-mail</li>
+    </ul>
+    <p id="footer-links">Политика конфиденциальности | Пользовательское соглашение</p>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script>
     let currentLang = 'ru';
+    const translations = {
+      'ru': {
+        hero: {
+          title: "Сергей Прудников",
+          description: "Внедряю ИИ и создаю работающий контент, помогаю освоить крипту.",
+          subtext: "11 лет в продажах, 3 года в маркетинге, 2 года в копирайтинге. С 2022-го в крипте, с 2024-го — в ИИ. Люблю задачи, где мозг работает на результат.",
+          approach_title: "Мой подход",
+          approach_list: ["Результат > Красивые слайды", "Честность > Завышенные обещания", "Партнёрство > Формальности", "Здравый смысл > Следование модным мейнстримам", "Вовлечённость с желанием дать больше ожидаемого", "Баланс по принципу Парето"],
+          cta: "Написать в Telegram",
+          text: "Без лишних обещаний: честность, баланс и чуть больше, чем вы ждете. Готов помочь с ИИ или контентом — пишите!"
+        },
+        tasks: {
+          title: "Задачи, которые решаем вместе",
+          list: ["Контент под ключ: Планы, тексты и визуалы для любых площадок. ИИ переймет ваш стиль повествования — докажу за день.", "Маркетинговая стратегия: Аудит и план с оптимальным балансом усилий и результата.", "Автоматизация и рутинный ад: Заменяю рутину скриптами и ИИ. Экономим время — без магии.", "Визуал на заказ: Лендинги, презентации, баннеры, фотосессии, видео — по вашему запросу."],
+          cta: "Написать в Telegram",
+          text: "Нужен контент, визуал, автоматизация, обращайтесь, помогу реализовать! Что-то другое? Пишите, вникну и найдем решение!"
+        },
+        case_studies: {
+          title: "Реальные кейсы",
+          list: ["Копирайтинг: Создаю контент для X и других соцсетей. Больше 50 проектов, в основном под NDA. Примеры: пост 1, пост 2, пост 3.", "Лендинги и визуал: Этот лендинг — живой кейс моей работы. Изображения на нем — так же примеры для лендингов и презентаций.", "Создание GPTs (ИИ-ассистент под вашу задачу) по запросу."],
+          cta: "Написать в Telegram",
+          text: "Пишите и обсудим вашу задачу, кейсы обновляются не часто..."
+        },
+        crypto_mentorship: {
+          title: "Наставничество в крипте",
+          list: ["С 2022 года в крипте, бесценный опыт взлетов и падений.", "Проведу за руку от создания кошелька и аккаунта на бирже до формирования инвестиционного портфеля.", "Дам рабочие инструменты и проверенные источники информации.", "Покажу риски 'прибыльных' схем и уберегу от ошибок и основных схем скама."],
+          cta: "Написать в Telegram",
+          text: "Хотите разобраться в крипте? Обращайтесь, проведу через все этапы."
+        },
+        products: {
+          title: "Мои продукты для вас",
+          note: "Будет обновляться",
+          list_item: {
+            title: "ИИ-аналитик книг",
+            description: "Анализирует книги и дает резюме за 5 минут. Тест на 'Подсознание может все' Дж. Кехо — доказано, работает!",
+            cta: "Попробовать"
+          },
+          text: "Понравился ИИ-аналитик? Хотите ИИ-ассистента под свою задачу? Обращайтесь — создам GPTs под вашу задачу и научу использовать!"
+        },
+        socials: {
+          title: "Мои соцсети и каналы",
+          list: ["X: @Web3Duke1", "LinkedIn", "Instagram", "Facebook", "Threads", "TG Channel"],
+          text: "Подписывайтесь и следите за полезной информацией от меня в соцсетях!"
+        },
+        footer: {
+          title: "Связаться со мной",
+          list: ["Telegram", "WhatsApp", "E-mail"],
+          links: "Политика конфиденциальности | Пользовательское соглашение"
+        }
+      },
+      'en': {
+        hero: {
+          title: "Sergey Prudnikov",
+          description: "I implement AI and create effective content, helping you master crypto.",
+          subtext: "11 years in sales, 3 years in marketing, 2 years in copywriting. In crypto since 2022, in AI since 2024. I love tasks that challenge the mind.",
+          approach_title: "My Approach",
+          approach_list: ["Results > Pretty Slides", "Honesty > Overpromises", "Partnership > Formalities", "Common Sense > Following Trends", "Engagement with a Desire to Exceed Expectations", "Balance by Pareto Principle"],
+          cta: "Write on Telegram",
+          text: "No empty promises: honesty, balance, and a bit more than you expect. Ready to help with AI or content — write me!"
+        },
+        tasks: {
+          title: "Tasks We Solve Together",
+          list: ["Turnkey Content: Plans, texts, and visuals for any platform. AI will adopt your storytelling style — I’ll prove it in a day.", "Marketing Strategy: Audit and plan with an optimal effort-to-result balance.", "Automation and Routine Management: Replace routine with scripts and AI. Save time — no magic.", "Custom Visuals: Landings, presentations, banners, photoshoots, videos — on your request."],
+          cta: "Write on Telegram",
+          text: "Need content, visuals, or automation? Contact me, I’ll help implement it! Something else? Write, I’ll dive in and find a solution!"
+        },
+        case_studies: {
+          title: "Real Case Studies",
+          list: ["Copywriting: I create content for X and other social media. Over 50 projects, mostly under NDA. Examples: post 1, post 2, post 3.", "Landings and Visuals: This landing is a live case of my work. Images here are also examples for landings and presentations.", "Creating GPTs (AI assistant tailored to your task) on request."],
+          cta: "Write on Telegram",
+          text: "Write to discuss your task, case studies are updated infrequently..."
+        },
+        crypto_mentorship: {
+          title: "Crypto Mentorship",
+          list: ["In crypto since 2022, with invaluable experience of ups and downs.", "I’ll guide you step-by-step from setting up a wallet and exchange account to building an investment portfolio.", "I’ll provide working tools and trusted information sources.", "I’ll show the risks of 'profitable' schemes and protect you from mistakes and common scams."],
+          cta: "Write on Telegram",
+          text: "Want to understand crypto? Contact me, I’ll walk you through all the stages."
+        },
+        products: {
+          title: "My Products for You",
+          note: "Will be updated",
+          list_item: {
+            title: "AI Book Analyst",
+            description: "Analyzes books and provides summaries in 5 minutes. Tested on 'The Subconscious Can Do Anything' by J. Kehoe — proven to work!",
+            cta: "Try It"
+          },
+          text: "Liked the AI Analyst? Want an AI assistant for your task? Contact me — I’ll create a custom GPTs and teach you how to use it!"
+        },
+        socials: {
+          title: "My Social Media and Channels",
+          list: ["X: @Web3Duke1", "LinkedIn", "Instagram", "Facebook", "Threads", "TG Channel"],
+          text: "Follow me for useful info on social media!"
+        },
+        footer: {
+          title: "Get in Touch",
+          list: ["Telegram", "WhatsApp", "E-mail"],
+          links: "Privacy Policy | User Agreement"
+        }
+      },
+      'es': {
+        hero: {
+          title: "Sergey Prudnikov",
+          description: "Implemento IA y creo contenido efectivo, ayudando a dominar criptomonedas.",
+          subtext: "11 años en ventas, 3 años en marketing, 2 años en redacción. En cripto desde 2022, en IA desde 2024. Amo los retos que desafían la mente.",
+          approach_title: "Mi enfoque",
+          approach_list: ["Resultados > Diapositivas bonitas", "Honestidad > Promesas exageradas", "Asociación > Formalidades", "Sentido común > Seguir tendencias", "Compromiso con deseo de superar expectativas", "Equilibrio por principio de Pareto"],
+          cta: "Escribe en Telegram",
+          text: "Sin promesas vacías: honestidad, equilibrio y un poco más de lo que esperas. ¡Listo para ayudar con IA o contenido — escribe!"
+        },
+        tasks: {
+          title: "Tareas que resolvemos juntos",
+          list: ["Contenido llave en mano: Planes, textos y visuales para cualquier plataforma. IA adoptará tu estilo narrativo — lo probaré en un día.", "Estrategia de marketing: Auditoría y plan con un balance óptimo de esfuerzo y resultado.", "Automatización y gestión de rutina: Reemplazo la rutina con scripts e IA. Ahorramos tiempo — sin magia.", "Visuales a pedido: Landings, presentaciones, banners, sesiones de fotos, videos — según tu solicitud."],
+          cta: "Escribe en Telegram",
+          text: "¿Necesitas contenido, visuales o automatización? Contáctame, te ayudaré a implementarlo! ¿Algo más? Escribe, me sumergiré y encontraremos una solución!"
+        },
+        case_studies: {
+          title: "Casos reales",
+          list: ["Redacción: Creo contenido para X y otras redes sociales. Más de 50 proyectos, la mayoría bajo NDA. Ejemplos: post 1, post 2, post 3.", "Landings y visuales: Este landing es un caso real de mi trabajo. Las imágenes aquí son también ejemplos para landings y presentaciones.", "Creación de GPTs (asistente de IA adaptado a tu tarea) bajo solicitud."],
+          cta: "Escribe en Telegram",
+          text: "Escribe para discutir tu tarea, los casos se actualizan poco..."
+        },
+        crypto_mentorship: {
+          title: "Mentoría en cripto",
+          list: ["En cripto desde 2022, con experiencia invaluable de altibajos.", "Te guiaré paso a paso desde crear una billetera y cuenta en un exchange hasta formar un portafolio de inversión.", "Proporcionaré herramientas funcionales y fuentes de información confiables.", "Te mostraré los riesgos de esquemas 'rentables' y te protegeré de errores y estafas comunes."],
+          cta: "Escribe en Telegram",
+          text: "¿Quieres entender cripto? Contáctame, te guiaré por todas las etapas."
+        },
+        products: {
+          title: "Mis productos para ti",
+          note: "Se actualizará",
+          list_item: {
+            title: "Analista de libros con IA",
+            description: "Analiza libros y proporciona resúmenes en 5 minutos. Probado con 'El subconsciente puede todo' de J. Kehoe — ¡funciona!",
+            cta: "Pruébalo"
+          },
+          text: "¿Te gustó el analista de IA? ¿Quieres un asistente de IA para tu tarea? Contáctame — crearé un GPTs personalizado y te enseñaré a usarlo!"
+        },
+        socials: {
+          title: "Mis redes sociales y canales",
+          list: ["X: @Web3Duke1", "LinkedIn", "Instagram", "Facebook", "Threads", "Canal de TG"],
+          text: "¡Sígueme para obtener información útil en redes sociales!"
+        },
+        footer: {
+          title: "Contáctame",
+          list: ["Telegram", "WhatsApp", "E-mail"],
+          links: "Política de privacidad | Acuerdo del usuario"
+        }
+      },
+      'pl': {
+        hero: {
+          title: "Sergey Prudnikov",
+          description: "Wdrożam AI i tworzę skuteczne treści, pomagam opanować kryptowaluty.",
+          subtext: "11 lat w sprzedaży, 3 lata w marketingu, 2 lata w copywritingu. W kryptowalutach od 2022, w AI od 2024. Kocham zadania, które angażują umysł.",
+          approach_title: "Moje podejście",
+          approach_list: ["Wyniki > Piękne slajdy", "Szczerość > Przesadne obietnice", "Partnerstwo > Formalności", "Zdrowy rozsądek > Ślepe podążanie za trendami", "Zaangażowanie z chęcią przekroczenia oczekiwań", "Balans według zasady Pareta"],
+          cta: "Napisz na Telegram",
+          text: "Bez pustych obietnic: szczerość, balans i trochę więcej, niż oczekujesz. Gotów pomóc z AI lub treściami — pisz!"
+        },
+        tasks: {
+          title: "Zadania, które rozwiązujemy razem",
+          list: ["Treści pod klucz: Plany, teksty i wizualizacje na dowolną platformę. AI przejmie Twój styl narracji — udowodnię to w jeden dzień.", "Strategia marketingowa: Audyt i plan z optymalnym bilansem wysiłku i rezultatu.", "Automatyzacja i zarządzanie rutyną: Zastępuję rutynę skryptami i AI. Oszczędzamy czas — bez magii.", "Wizualizacje na zamówienie: Landingi, prezentacje, banery, sesje zdjęciowe, filmy — na Twoje życzenie."],
+          cta: "Napisz na Telegram",
+          text: "Potrzebujesz treści, wizualizacji czy automatyzacji? Skontaktuj się, pomogę to zrealizować! Coś innego? Pisz, zagłębię się i znajdziemy rozwiązanie!"
+        },
+        case_studies: {
+          title: "Rzeczywiste przypadki",
+          list: ["Kopiarstwo: Tworzę treści dla X i innych mediów społecznościowych. Ponad 50 projektów, głównie pod NDA. Przykłady: post 1, post 2, post 3.", "Landings i wizualizacje: Ten landing to żywy przykład mojej pracy. Obrazy na nim to również przykłady dla lądowań i prezentacji.", "Tworzenie GPTs (asystent AI dostosowany do Twojego zadania) na żądanie."],
+          cta: "Napisz na Telegram",
+          text: "Napisz, by omówić Twoje zadanie, przypadki są aktualizowane rzadko..."
+        },
+        crypto_mentorship: {
+          title: "Mentorstwo w kryptowalutach",
+          list: ["W kryptowalutach od 2022 roku, z bezcennym doświadczeniem wzlotów i upadków.", "Poprowadzę Cię krok po kroku od stworzenia portfela i konta na giełdzie do utworzenia portfela inwestycyjnego.", "Dostarczę działające narzędzia i sprawdzone źródła informacji.", "Pokażę ryzyko 'zyskowanych' schematów i ochronię przed błędami oraz najczęstszymi oszustwami."],
+          cta: "Napisz na Telegram",
+          text: "Chcesz zrozumieć kryptowaluty? Skontaktuj się, poprowadzę Cię przez wszystkie etapy."
+        },
+        products: {
+          title: "Moje produkty dla Ciebie",
+          note: "Będzie aktualizowane",
+          list_item: {
+            title: "Analityk książek z AI",
+            description: "Analizuje książki i dostarcza podsumowania w 5 minut. Testowany na 'Podświadomość może wszystko' J. Kehoe — działa!",
+            cta: "Wypróbuj"
+          },
+          text: "Podobał Ci się analityk AI? Chcesz asystenta AI do swojego zadania? Skontaktuj się — stworzę customowe GPTs i nauczę Cię z niego korzystać!"
+        },
+        socials: {
+          title: "Moje media społecznościowe i kanały",
+          list: ["X: @Web3Duke1", "LinkedIn", "Instagram", "Facebook", "Threads", "Kanał TG"],
+          text: "Obserwuj mnie, aby otrzymywać przydatne informacje na mediach społecznościowych!"
+        },
+        footer: {
+          title: "Skontaktuj się ze mną",
+          list: ["Telegram", "WhatsApp", "E-mail"],
+          links: "Polityka prywatności | Umowa użytkownika"
+        }
+      }
+    };
 
     function loadLanguage(lang) {
       currentLang = lang;
-      fetch(`languages/${lang}.json`)
-        .then(response => response.json())
-        .then(data => {
-          document.getElementById('hero-title').textContent = data.hero.title;
-          document.getElementById('hero-description').textContent = data.hero.description;
-          document.getElementById('hero-subtext').textContent = data.hero.subtext;
-          document.getElementById('approach-title').textContent = data.hero.approach_title;
-          document.getElementById('approach-list').innerHTML = data.hero.approach_list.map(item => `<li>${item}</li>`).join('');
-          document.getElementById('hero-cta').textContent = data.hero.cta;
-          document.getElementById('hero-text').textContent = data.hero.text;
-          document.getElementById('tasks-title').textContent = data.tasks.title;
-          document.getElementById('tasks-list').innerHTML = data.tasks.list.map(item => `<li>${item}</li>`).join('');
-          document.getElementById('tasks-cta').textContent = data.tasks.cta;
-          document.getElementById('tasks-text').textContent = data.tasks.text;
-        })
-        .catch(error => console.error('Error loading language:', error));
+      const data = translations[lang];
+      document.getElementById('hero-title').textContent = data.hero.title;
+      document.getElementById('hero-description').textContent = data.hero.description;
+      document.getElementById('hero-subtext').textContent = data.hero.subtext;
+      document.getElementById('approach-title').textContent = data.hero.approach_title;
+      document.getElementById('approach-list').innerHTML = data.hero.approach_list.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('hero-cta').textContent = data.hero.cta;
+      document.getElementById('hero-text').textContent = data.hero.text;
+      document.getElementById('tasks-title').textContent = data.tasks.title;
+      document.getElementById('tasks-list').innerHTML = data.tasks.list.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('tasks-cta').textContent = data.tasks.cta;
+      document.getElementById('tasks-text').textContent = data.tasks.text;
+      document.getElementById('case-studies-title').textContent = data.case_studies.title;
+      document.getElementById('case-studies-list').innerHTML = data.case_studies.list.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('case-studies-cta').textContent = data.case_studies.cta;
+      document.getElementById('case-studies-text').textContent = data.case_studies.text;
+      document.getElementById('crypto-mentorship-title').textContent = data.crypto_mentorship.title;
+      document.getElementById('crypto-mentorship-list').innerHTML = data.crypto_mentorship.list.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('crypto-mentorship-cta').textContent = data.crypto_mentorship.cta;
+      document.getElementById('crypto-mentorship-text').textContent = data.crypto_mentorship.text;
+      document.getElementById('products-title').textContent = data.products.title;
+      document.getElementById('products-note').textContent = data.products.note;
+      document.getElementById('products-list').innerHTML = `<li><h3>${data.products.list_item.title}</h3><p>${data.products.list_item.description}</p><button class="cta">${data.products.list_item.cta}</button></li>`;
+      document.getElementById('products-cta').textContent = data.products.cta;
+      document.getElementById('products-text').textContent = data.products.text;
+      document.getElementById('socials-title').textContent = data.socials.title;
+      document.getElementById('socials-list').innerHTML = data.socials.list.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('socials-text').textContent = data.socials.text;
+      document.getElementById('footer-title').textContent = data.footer.title;
+      document.getElementById('footer-list').innerHTML = data.footer.list.map(item => `<li>${item}</li>`).join('');
+      document.getElementById('footer-links').textContent = data.footer.links;
+
+      // Анимации GSAP для всех секций
+      gsap.from(".hero", { opacity: 0, y: 50, duration: 1 });
+      gsap.from(".tasks", { opacity: 0, y: 50, duration: 1, delay: 0.2 });
+      gsap.from(".case-studies", { opacity: 0, y: 50, duration: 1, delay: 0.4 });
+      gsap.from(".crypto-mentorship", { opacity: 0, y: 50, duration: 1, delay: 0.6 });
+      gsap.from(".products", { opacity: 0, y: 50, duration: 1, delay: 0.8 });
+      gsap.from(".socials", { opacity: 0, y: 50, duration: 1, delay: 1.0 });
+      gsap.from(".footer", { opacity: 0, y: 50, duration: 1, delay: 1.2 });
     }
 
     // Загрузка языка при старте

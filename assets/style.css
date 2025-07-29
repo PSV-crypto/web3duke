@@ -1,0 +1,93 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.language-switcher {
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.language-switcher button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.language-switcher button:hover {
+  background-color: #0056b3;
+}
+
+section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.hero {
+  background-image: url('assets/images/Hero.webp');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.tasks {
+  background-image: url('assets/images/Service.webp');
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  padding-left: 60px;
+}
+
+.case-studies {
+  background-image: url('assets/images/Copywriter.webp');
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  padding-left: 60px;
+}
+
+.crypto-mentorship {
+  background-image: url('assets/images/Crypto.webp');
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  padding-left: 60px;
+}
+
+.products {
+  background-image: url('assets/images/ai-book-analyst.webp');
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  padding-left: 60px;
+}
+
+h1 { font-size: 2.5em; color: #2c3e50; }
+h2 { font-size: 1.8em; color: #34495e; }
+ul { list-style-type: none; padding: 0; }
+ul li { margin: 10px 0; }
+
+.cta {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.cta:hover {
+  background-color: #218838;
+}
