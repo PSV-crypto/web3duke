@@ -189,6 +189,7 @@
             description: "Анализирует книги и дает резюме за 5 минут. Тест на 'Подсознание может все' Дж. Кехо — доказано, работает!",
             cta: "Попробовать"
           },
+          cta: "Написать в Telegram",
           text: "Понравился ИИ-аналитик? Хотите ИИ-ассистента под свою задачу? Обращайтесь — создам GPTs под вашу задачу и научу использовать!"
         },
         socials: {
@@ -238,6 +239,7 @@
             description: "Analyzes books and provides summaries in 5 minutes. Tested on 'The Subconscious Can Do Anything' by J. Kehoe — proven to work!",
             cta: "Try It"
           },
+          cta: "Write on Telegram",
           text: "Liked the AI Analyst? Want an AI assistant for your task? Contact me — I’ll create a custom GPTs and teach you how to use it!"
         },
         socials: {
@@ -287,6 +289,7 @@
             description: "Analiza libros y proporciona resúmenes en 5 minutos. Probado con 'El subconsciente puede todo' de J. Kehoe — ¡funciona!",
             cta: "Pruébalo"
           },
+          cta: "Escribe en Telegram",
           text: "¿Te gustó el analista de IA? ¿Quieres un asistente de IA para tu tarea? Contáctame — crearé un GPTs personalizado y te enseñaré a usarlo!"
         },
         socials: {
@@ -336,6 +339,7 @@
             description: "Analizuje książki i dostarcza podsumowania w 5 minut. Testowany na 'Podświadomość może wszystko' J. Kehoe — działa!",
             cta: "Wypróbuj"
           },
+          cta: "Napisz na Telegram",
           text: "Podobał Ci się analityk AI? Chcesz asystenta AI do swojego zadania? Skontaktuj się — stworzę customowe GPTs i nauczę Cię z niego korzystać!"
         },
         socials: {
@@ -385,7 +389,7 @@
       document.getElementById('footer-list').innerHTML = data.footer.list.map(item => `<li>${item}</li>`).join('');
       document.getElementById('footer-links').textContent = data.footer.links;
 
-      // Анимации GSAP для всех секций
+      // Исправление GSAP: заменяем .services на .tasks
       gsap.from(".hero", { opacity: 0, y: 50, duration: 1 });
       gsap.from(".tasks", { opacity: 0, y: 50, duration: 1, delay: 0.2 });
       gsap.from(".case-studies", { opacity: 0, y: 50, duration: 1, delay: 0.4 });
